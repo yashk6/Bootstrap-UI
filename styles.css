@@ -1,0 +1,272 @@
+/* ==========================================================================
+   Complex UI - Custom Stylesheet
+   ========================================================================== */
+
+/* Global Smooth Scroll & Typography */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #333333;
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Part 1: Header & Navigation Bar
+   -------------------------------------------------------------------------- */
+.navbar-brand {
+  letter-spacing: -0.5px;
+}
+
+.search-btn {
+  border-color: #198754;
+  color: #198754;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-btn:hover {
+  background-color: #198754;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Part 2: Bootstrap Carousel
+   -------------------------------------------------------------------------- */
+#carouselSection {
+  position: relative;
+}
+
+.carousel-img {
+  height: 75vh;
+  min-height: 400px;
+  max-height: 650px;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+
+.carousel-caption {
+  bottom: 20%;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.custom-carousel-btn {
+  border-radius: 6px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.custom-carousel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(13, 110, 253, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   Part 3: Custom Flex Section
+   -------------------------------------------------------------------------- */
+.custom-flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.flex-item {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-wrapper {
+  width: 100%;
+  aspect-ratio: 300 / 200;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: #e9ecef;
+}
+
+.flex-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.flex-item:hover .flex-img {
+  transform: scale(1.03);
+}
+
+.flex-description {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Responsive collapse for Flex Section */
+@media (max-width: 767.98px) {
+  .custom-flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flex-item {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Part 4: CSS Grid Photo Gallery (3 Rows, 3/4 Columns, 9 Images)
+   -------------------------------------------------------------------------- */
+.css-grid-gallery {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
+  grid-template-rows: 220px 220px 220px;
+  gap: 16px;
+}
+
+.grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  background-color: #e9ecef;
+}
+
+.grid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.grid-item:hover .grid-img {
+  transform: scale(1.04);
+}
+
+/* Specific Grid Placements according to UI Design */
+/* Tall Item spanning Rows 1 & 2 on left */
+.grid-item-tall {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+
+/* Row 3 Left Item (Col 1) */
+.grid-item-row3-left {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+/* Row 3 Right Item spanning Cols 2, 3 & 4 */
+.grid-item-row3-right {
+  grid-column: 2 / span 3;
+  grid-row: 3;
+}
+
+/* Responsive Grid for Tablets & Mobile */
+@media (max-width: 991.98px) {
+  .css-grid-gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .grid-item-tall,
+  .grid-item-row3-left,
+  .grid-item-row3-right,
+  .grid-item-normal {
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+    height: 220px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .css-grid-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-item-tall,
+  .grid-item-row3-left,
+  .grid-item-row3-right,
+  .grid-item-normal {
+    height: 200px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Part 5: Bootstrap Cards & Hover Effects
+   -------------------------------------------------------------------------- */
+.custom-card {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-img-container {
+  aspect-ratio: 300 / 200;
+  overflow: hidden;
+  background-color: #e9ecef;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Call to Action Button Hover Effect */
+.custom-cta-btn {
+  background-color: #0d6efd;
+  border: none;
+  font-weight: 500;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.custom-cta-btn:hover {
+  background-color: #0b5ed7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   Part 6: Footer Styling
+   -------------------------------------------------------------------------- */
+.footer-custom {
+  background-color: #f8f9fa;
+}
+
+.footer-links a {
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #0b5ed7 !important;
+  text-decoration: underline !important;
+}
+
+.back-to-top-btn {
+  transition: all 0.3s ease;
+}
+
+.back-to-top-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.35);
+}

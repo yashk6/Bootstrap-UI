@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complex UI - Bootstrap & CSS Grid Website</title>
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+  <!-- Part 1: Responsive Navigation Bar -->
+  <header class="sticky-top bg-light border-bottom shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light container-fluid px-4">
+      <!-- Heading / Brand -->
+      <a class="navbar-brand fw-semibold text-dark fs-4" href="#">Complex UI</a>
+      
+      <!-- Hamburger Menu Button for Mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+              aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Collapsible Content -->
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Navigation Links -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#flex-section">Section 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#grid-section">Section 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="#card-section">Section 3</a>
+          </li>
+        </ul>
+
+        <!-- Search Bar -->
+        <form class="d-flex" role="search" action="#" method="get">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+          <button class="btn btn-outline-success search-btn" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Part 2: Bootstrap Carousel -->
+    <section id="carouselSection" aria-label="Featured Image Slideshow">
+      <div id="headerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Carousel Slides -->
+        <div class="carousel-inner">
+          <!-- Slide 1 -->
+          <div class="carousel-item active" data-bs-interval="5000">
+            <img src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1600&q=80" 
+                 class="d-block w-100 carousel-img" alt="Futuristic City Skyline at Sunset">
+            <div class="carousel-caption d-block">
+              <h2 class="fw-bold text-white mb-2">First Slide Title</h2>
+              <p class="mb-3 text-white-50 fs-6">First slide description showcasing elegant design principles.</p>
+              <a href="#flex-section" class="btn btn-primary px-4 py-2 custom-carousel-btn">Call to Action</a>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f30ac4ce78?auto=format&fit=crop&w=1600&q=80" 
+                 class="d-block w-100 carousel-img" alt="Modern Architectural Skyscrapers">
+            <div class="carousel-caption d-block">
+              <h2 class="fw-bold text-white mb-2">Second Slide Title</h2>
+              <p class="mb-3 text-white-50 fs-6">Second slide description featuring high performance components.</p>
+              <a href="#grid-section" class="btn btn-primary px-4 py-2 custom-carousel-btn">Call to Action</a>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1600&q=80" 
+                 class="d-block w-100 carousel-img" alt="Minimalist Modern Interior Workspace">
+            <div class="carousel-caption d-block">
+              <h2 class="fw-bold text-white mb-2">Third Slide Title</h2>
+              <p class="mb-3 text-white-50 fs-6">Third slide description highlighting responsive layout structures.</p>
+              <a href="#card-section" class="btn btn-primary px-4 py-2 custom-carousel-btn">Call to Action</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#headerCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Part 3: Custom Flex Section -->
+    <section id="flex-section" class="py-5 bg-white">
+      <div class="container">
+        <div class="custom-flex-container">
+          <!-- Flex Item 1 -->
+          <div class="flex-item">
+            <div class="img-wrapper mb-3">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&h=400&q=80" 
+                   alt="Modern Villa Exterior" class="flex-img">
+            </div>
+            <p class="flex-description text-center text-secondary mb-0">Short description</p>
+          </div>
+
+          <!-- Flex Item 2 -->
+          <div class="flex-item">
+            <div class="img-wrapper mb-3">
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&h=400&q=80" 
+                   alt="Minimalist Living Space" class="flex-img">
+            </div>
+            <p class="flex-description text-center text-secondary mb-0">Short description</p>
+          </div>
+
+          <!-- Flex Item 3 -->
+          <div class="flex-item">
+            <div class="img-wrapper mb-3">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&h=400&q=80" 
+                   alt="Architectural Interior View" class="flex-img">
+            </div>
+            <p class="flex-description text-center text-secondary mb-0">Short description</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 4: CSS Grid Photo Gallery -->
+    <section id="grid-section" class="py-4 bg-white">
+      <div class="container">
+        <div class="css-grid-gallery">
+          <!-- Item 1: Row 1 & 2 Left Tall Image -->
+          <div class="grid-item grid-item-tall">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" 
+                 alt="High-rise Skyscraper Glass Exterior" class="grid-img">
+          </div>
+
+          <!-- Item 2: Row 1 Middle Left Image -->
+          <div class="grid-item grid-item-normal">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" 
+                 alt="Serene Mountain Lake Vista" class="grid-img">
+          </div>
+
+          <!-- Item 3: Row 1 Middle Right Image -->
+          <div class="grid-item grid-item-normal">
+            <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=600&q=80" 
+                 alt="Geometric Architecture Pattern" class="grid-img">
+          </div>
+
+          <!-- Item 4: Row 1 Right Image -->
+          <div class="grid-item grid-item-normal">
+            <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80" 
+                 alt="Foggy Forest Mountain Ridge" class="grid-img">
+          </div>
+
+          <!-- Item 5: Row 2 Middle Left Image -->
+          <div class="grid-item grid-item-normal">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=600&q=80" 
+                 alt="Coastal Cliffs Sunset Horizon" class="grid-img">
+          </div>
+
+          <!-- Item 6: Row 2 Middle Right Image -->
+          <div class="grid-item grid-item-normal">
+            <img src="https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=600&q=80" 
+                 alt="Autumn Woods Sunlight Canopy" class="grid-img">
+          </div>
+
+          <!-- Item 7: Row 2 Right Image -->
+          <div class="grid-item grid-item-normal">
+            <img src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?auto=format&fit=crop&w=800&q=80" 
+                 alt="Majestic Mountain Range Valley" class="grid-img">
+          </div>
+
+          <!-- Item 8: Row 3 Left Image -->
+          <div class="grid-item grid-item-row3-left">
+            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80" 
+                 alt="Creative Workspace Setup with Laptop" class="grid-img">
+          </div>
+
+          <!-- Item 9: Row 3 Right Wide Image -->
+          <div class="grid-item grid-item-row3-right">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Modern Web Development Code Screen" class="grid-img">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Part 5: Bootstrap Card Section -->
+    <section id="card-section" class="py-5 bg-light border-top border-bottom">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100 custom-card border-0">
+              <div class="card-img-container">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&h=400&q=80" 
+                     class="card-img-top" alt="Business Strategy Dashboard">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <h5 class="card-title fw-bold text-dark mb-2">Card Title</h5>
+                <p class="card-text text-secondary mb-4">Card description</p>
+                <a href="#" class="btn btn-primary custom-cta-btn mt-auto align-self-start">Call to Action</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100 custom-card border-0">
+              <div class="card-img-container">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&h=400&q=80" 
+                     class="card-img-top" alt="Team Collaboration Workspace">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <h5 class="card-title fw-bold text-dark mb-2">Card Title</h5>
+                <p class="card-text text-secondary mb-4">Card description</p>
+                <a href="#" class="btn btn-primary custom-cta-btn mt-auto align-self-start">Call to Action</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-12 col-md-4">
+            <div class="card h-100 custom-card border-0">
+              <div class="card-img-container">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&h=400&q=80" 
+                     class="card-img-top" alt="Digital Innovation Concept">
+              </div>
+              <div class="card-body d-flex flex-column p-4">
+                <h5 class="card-title fw-bold text-dark mb-2">Card Title</h5>
+                <p class="card-text text-secondary mb-4">Card description</p>
+                <a href="#" class="btn btn-primary custom-cta-btn mt-auto align-self-start">Call to Action</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Part 6: Bootstrap Footer -->
+  <footer class="footer-custom pt-5 pb-4 bg-light border-top">
+    <div class="container">
+      <div class="row gy-4 mb-4">
+        <!-- Column 1: Useful Links -->
+        <div class="col-12 col-md-4">
+          <h5 class="footer-heading fw-bold mb-3 text-dark">Useful Links</h5>
+          <ul class="list-unstyled footer-links mb-0">
+            <li class="mb-2"><a href="#flex-section" class="text-primary text-decoration-none">Link 1</a></li>
+            <li class="mb-2"><a href="#grid-section" class="text-primary text-decoration-none">Link 2</a></li>
+            <li class="mb-2"><a href="#card-section" class="text-primary text-decoration-none">Link 3</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: More Links -->
+        <div class="col-12 col-md-4">
+          <h5 class="footer-heading fw-bold mb-3 text-dark">More Links</h5>
+          <ul class="list-unstyled footer-links mb-0">
+            <li class="mb-2"><a href="#" class="text-primary text-decoration-none">Link 4</a></li>
+            <li class="mb-2"><a href="#" class="text-primary text-decoration-none">Link 5</a></li>
+            <li class="mb-2"><a href="#" class="text-primary text-decoration-none">Link 6</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Us -->
+        <div class="col-12 col-md-4">
+          <h5 class="footer-heading fw-bold mb-3 text-dark">Contact Us</h5>
+          <p class="mb-2 text-dark">Email: <a href="mailto:example@example.com" class="text-dark text-decoration-none">example@example.com</a></p>
+          <p class="mb-0 text-dark">Phone: +1 (555) 123-4567</p>
+        </div>
+      </div>
+
+      <!-- Bottom Footer Bar -->
+      <div class="row align-items-center pt-3 border-top border-secondary-subtle">
+        <div class="col-12 col-sm-6 text-start mb-3 mb-sm-0">
+          <p class="copyright-text mb-0 text-dark">&copy; 2023 Complex UI. All Rights Reserved.</p>
+        </div>
+        <div class="col-12 col-sm-6 text-sm-end text-start">
+          <a href="#top" class="btn btn-primary rounded-3 px-3 py-2 back-to-top-btn">Back to Top</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5.3 JS Bundle (Required for Navbar Collapse & Carousel controls) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
